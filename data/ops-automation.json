@@ -1,0 +1,198 @@
+[
+  {
+    "id": "ops-01",
+    "drawer": "ops-automation",
+    "title": {
+      "zh": "定时情报简报 Agent",
+      "en": "Scheduled Intel Briefing Agent"
+    },
+    "metaphor": {
+      "zh": "每天花 3 分钟看过滤后的情报，告别刷信息流",
+      "en": "A 3-minute filtered daily brief that replaces doomscrolling"
+    },
+    "trigger": {
+      "zh": "当你每天在 X、GitHub、Hacker News 和公众号之间反复刷屏，耗掉两小时却只记住一堆焦虑时。",
+      "en": "When bouncing between feeds, repos, and newsletters burns two hours a day and leaves only noise."
+    },
+    "mechanism": {
+      "zh": [
+        "锁定不超过 10 个高信噪比信息源（RSS、特定仓库 Release、核心行业关键词）",
+        "通过定时任务自动抓取，用大模型按“与我当前项目相关度”打分并剔除标题党与重复新闻",
+        "每天固定时间推送一份不超过 5 条的极简摘要，附带原始链接供深度阅读"
+      ],
+      "en": [
+        "Lock at most 10 high-signal sources (RSS feeds, key repo releases, core domain keywords)",
+        "Run a scheduled job that scores items by relevance to your active projects and strips clickbait duplicates",
+        "Deliver a crisp daily digest capped at 5 items with direct source links"
+      ]
+    },
+    "deliverable": {
+      "zh": "每日自动送达的《5 条高信噪比情报简报》",
+      "en": "An automated daily 5-item high-signal intelligence digest"
+    },
+    "current_stack": {
+      "zh": "GitHub Actions Cron / n8n + RSS + 轻量模型摘要",
+      "en": "GitHub Actions Cron / n8n + RSS + lightweight LLM summarizer"
+    },
+    "anti_pattern": {
+      "zh": "不要贪多订阅上百个源；简报超过 1 屏没人会看，最终只会变成新的未读焦虑。",
+      "en": "Don't subscribe to 100 feeds; any digest longer than one screen becomes another unread chore."
+    },
+    "combos": [
+      "cos-03",
+      "ops-02"
+    ],
+    "tags": {
+      "layer": "Automation",
+      "form_factor": "Workflow / Agent",
+      "leverage": "Time"
+    }
+  },
+  {
+    "id": "ops-02",
+    "drawer": "ops-automation",
+    "title": {
+      "zh": "私有知识库自动归档流",
+      "en": "Private Knowledge Auto-Archiver"
+    },
+    "metaphor": {
+      "zh": "碎片灵感随手一扔，自动打标归位不吃灰",
+      "en": "Tossing raw sparks into an inbox that auto-tags and files itself"
+    },
+    "trigger": {
+      "zh": "当你每天随手收藏了大量网页、对话金句和突发灵感，但过一周就再也找不到它们在哪时。",
+      "en": "When bookmarks, chat insights, and random sparks pile up across apps and vanish when you need them."
+    },
+    "mechanism": {
+      "zh": [
+        "设立唯一的碎片收集入口（如本地 Inbox 文件、快捷指令或私有仓库 Issue）",
+        "定期触发脚本调用模型，自动提取标题、3 个受控标签与 1 句话核心价值",
+        "按统一命名规范归档为纯文本 Markdown，确保未来十年不依赖任何闭源笔记软件"
+      ],
+      "en": [
+        "Funnel all loose sparks into a single capture inbox (local file, shortcut, or private repo issue)",
+        "Run an automated pass that extracts a clean title, 3 controlled tags, and a 1-line takeaway",
+        "File everything as plain Markdown with consistent naming—zero lock-in to proprietary note apps"
+      ]
+    },
+    "deliverable": {
+      "zh": "一套结构统一、可全文秒搜的本地 Markdown 知识库",
+      "en": "A cleanly structured, instantly searchable local Markdown knowledge base"
+    },
+    "current_stack": {
+      "zh": "本地脚本 / Obsidian + AI 自动打标归档流",
+      "en": "Local script / Obsidian + AI auto-tagging pipeline"
+    },
+    "anti_pattern": {
+      "zh": "不要收藏“以后可能会看”的万字长文原文；只归档经过你大脑筛选的核心片段或自己的评注。",
+      "en": "Don't hoard unread 10,000-word articles; archive only filtered excerpts and your own notes."
+    },
+    "combos": [
+      "os-02",
+      "eng-04"
+    ],
+    "tags": {
+      "layer": "Memory",
+      "form_factor": "Workflow / Agent",
+      "leverage": "Time"
+    }
+  },
+  {
+    "id": "ops-03",
+    "drawer": "ops-automation",
+    "title": {
+      "zh": "API 额度与服务熔断哨兵",
+      "en": "API Quota & Service Circuit Sentinel"
+    },
+    "metaphor": {
+      "zh": "给自动化流装上防刷爆账单的保险丝",
+      "en": "A fuse box stopping runaway agents from burning your API budget"
+    },
+    "trigger": {
+      "zh": "当你跑起定时脚本、Agent 或公开小工具，生怕死循环一夜刷爆信用卡，或线上页面静默挂掉时。",
+      "en": "When running cron agents or public tools and worrying a runaway loop will spike your bill or fail silently."
+    },
+    "mechanism": {
+      "zh": [
+        "在所有大模型 API 后台强制设死“硬性月度消费上限（Hard Limit）”与 50%/80% 告警线",
+        "在自动化脚本里写入最大重试次数（Max Retries）与单次 Token 熔断阈值",
+        "配置免费定时拨测（Uptime Check），静态站或关键接口返回非 200 状态时立即发通知"
+      ],
+      "en": [
+        "Enforce hard monthly spend caps and 50%/80% billing alerts on every LLM API provider",
+        "Code strict max-retry limits and per-run token circuit breakers into every automated script",
+        "Set up free uptime pings that alert you immediately if a site or endpoint returns non-200"
+      ]
+    },
+    "deliverable": {
+      "zh": "一份《API 预算硬限清单》+ 自动化存活拨测告警流",
+      "en": "An API Hard-Limit checklist paired with automated uptime alerting"
+    },
+    "current_stack": {
+      "zh": "API 平台预算硬限 + GitHub Actions 拨测 / 免费 Uptime 监控",
+      "en": "Provider hard spend caps + GitHub Actions ping / free uptime monitor"
+    },
+    "anti_pattern": {
+      "zh": "不要只在代码里写软限制而不开平台级硬限；代码本身可能出 Bug，平台账单锁才是最后底线。",
+      "en": "Never rely solely on code-level caps; buggy code can bypass them—provider-level hard limits are mandatory."
+    },
+    "combos": [
+      "eng-03",
+      "ops-01"
+    ],
+    "tags": {
+      "layer": "Automation",
+      "form_factor": "Workflow / Agent",
+      "leverage": "Risk"
+    }
+  },
+  {
+    "id": "ops-04",
+    "drawer": "ops-automation",
+    "title": {
+      "zh": "高频任务 Skill 封装器",
+      "en": "Recurring-Task Skill Packager"
+    },
+    "metaphor": {
+      "zh": "凡是重复敲了 3 遍的指令，直接铸成一键技能",
+      "en": "Casting any prompt you've typed three times into a reusable Skill"
+    },
+    "trigger": {
+      "zh": "当你发现自己每周都在向 AI 重复解释同一套背景、格式要求和避坑规则，越写越烦时。",
+      "en": "When you catch yourself re-explaining the same context, format, and guardrails to AI every week."
+    },
+    "mechanism": {
+      "zh": [
+        "翻出最近 3 次最满意的同类对话记录，提取共性的输入参数、执行步骤与输出格式",
+        "把隐性默契写成显性的标准操作规程（SKILL.md），明确触发条件与禁止事项",
+        "存入个人公开或私有 Skills 仓库，每次实战发现新边缘情况就迭代更新版本号"
+      ],
+      "en": [
+        "Pull 3 successful past chats of the same task and extract shared inputs, steps, and output schemas",
+        "Codify implicit habits into an explicit SOP (SKILL.md) with clear triggers and guardrails",
+        "Store it in a versioned personal Skills repo and refine it whenever real-world edge cases surface"
+      ]
+    },
+    "deliverable": {
+      "zh": "一个可跨对话一键调用的标准化 Skill 模块",
+      "en": "A standardized, reusable Skill module callable across sessions"
+    },
+    "current_stack": {
+      "zh": "自定义 AI Skills / Gems + GitHub 版本化托管",
+      "en": "Custom AI Skills / Gems + versioned GitHub repo"
+    },
+    "anti_pattern": {
+      "zh": "不要为只干一次的临时活去封装复杂 Skill；严格遵守“事不过三”原则，第 3 次重复再动手封装。",
+      "en": "Don't package one-off tasks; follow the Rule of Three and codify only on the third repetition."
+    },
+    "combos": [
+      "os-04",
+      "ops-02"
+    ],
+    "tags": {
+      "layer": "Automation",
+      "form_factor": "Skill / Template",
+      "leverage": "Time"
+    }
+  }
+]

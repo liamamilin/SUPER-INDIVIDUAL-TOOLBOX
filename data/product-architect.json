@@ -1,0 +1,198 @@
+[
+  {
+    "id": "prd-01",
+    "drawer": "product-architect",
+    "title": {
+      "zh": "MVP 极简裁剪刀",
+      "en": "MVP Ruthless Trimmer"
+    },
+    "metaphor": {
+      "zh": "把三个月的宏大蓝图，砍成 48 小时能上线的核心切片",
+      "en": "Slicing a 3-month roadmap down to a 48-hour shippable core"
+    },
+    "trigger": {
+      "zh": "当你越想功能越多，登录、权限、后台、社区全想一起做，导致项目迟迟无法上线时。",
+      "en": "When feature creep hits—auth, admin panels, communities—and your project never ships."
+    },
+    "mechanism": {
+      "zh": [
+        "写出你脑中完整的理想功能清单",
+        "强制划出一条红线：删掉它，核心价值是否依然成立？（能删的全进 V2 冰柜）",
+        "把留下的最小闭环压成 1 条主路径，确保 1 个周末内能跑通交付"
+      ],
+      "en": [
+        "Dump your entire dream feature list onto paper",
+        "Apply one brutal filter: if we cut this, does the core value survive? Freeze everything else for V2",
+        "Compress the survivors into a single happy path shippable in one weekend"
+      ]
+    },
+    "deliverable": {
+      "zh": "一份《V1 必做清单（限 3 项）》与一份《V2 冰柜清单》",
+      "en": "A V1 Must-Ship list (max 3 items) and a V2 Icebox list"
+    },
+    "current_stack": {
+      "zh": "需求裁剪对话协议 + Markdown Scope 文档",
+      "en": "Scope-cutting protocol + Markdown scope doc"
+    },
+    "anti_pattern": {
+      "zh": "裁剪的是“锦上添花的功能”，不是“核心体验的完成度”；别把 MVP 做成无法使用的残次品。",
+      "en": "Cut nice-to-have scope, not core reliability—an MVP still has to be genuinely usable."
+    },
+    "combos": [
+      "eng-01",
+      "prd-04"
+    ],
+    "tags": {
+      "layer": "Building",
+      "form_factor": "Prompt / Protocol",
+      "leverage": "Time"
+    }
+  },
+  {
+    "id": "prd-02",
+    "drawer": "product-architect",
+    "title": {
+      "zh": "Taxonomy 分类骨架仪",
+      "en": "Taxonomy Skeleton Builder"
+    },
+    "metaphor": {
+      "zh": "先搭好不重不漏的抽屉，再往里装东西",
+      "en": "Building mutually exclusive drawers before filling them"
+    },
+    "trigger": {
+      "zh": "当你要做知识库、卡片库、产品目录或数据结构，但分类总是互相打架、越加越乱时。",
+      "en": "When building a library, directory, or data model where categories keep overlapping and breaking."
+    },
+    "mechanism": {
+      "zh": [
+        "分离“前台心智模型（用户怎么找）”与“后台正交标签（系统怎么筛）”",
+        "对相邻分类强制写出“裁决线”（明确某类灰色内容归 A 不归 B）",
+        "锁定受控词表（Enum）与单条记录 Schema，先跑通 4 条样板数据再扩量"
+      ],
+      "en": [
+        "Separate front-end mental models (how users browse) from back-end orthogonal tags (how systems filter)",
+        "Write explicit boundary rules for every pair of adjacent categories",
+        "Lock controlled vocabularies (enums) and record schemas, then stress-test with 4 sample records"
+      ]
+    },
+    "deliverable": {
+      "zh": "一份含分类边界裁决线与 JSON Schema 的《DESIGN.md》",
+      "en": "A DESIGN.md spec with boundary rules and a locked JSON Schema"
+    },
+    "current_stack": {
+      "zh": "多轮架构对齐对话 + JSON Schema / 校验脚本",
+      "en": "Iterative design-first chat + JSON Schema / validation script"
+    },
+    "anti_pattern": {
+      "zh": "不要在只有 5 条零散笔记时过度设计三层嵌套分类，体量上来再抽象。",
+      "en": "Don't over-engineer 3-level taxonomies for 5 loose notes; wait until volume demands structure."
+    },
+    "combos": [
+      "eng-03",
+      "prd-03"
+    ],
+    "tags": {
+      "layer": "Memory",
+      "form_factor": "Skill / Template",
+      "leverage": "Quality"
+    }
+  },
+  {
+    "id": "prd-03",
+    "drawer": "product-architect",
+    "title": {
+      "zh": "边缘案例审计清单",
+      "en": "Edge-Case Audit Checklist"
+    },
+    "metaphor": {
+      "zh": "上线前先雇一群“手欠用户”把产品摔一遍",
+      "en": "Stress-testing your product against chaotic real-world inputs before launch"
+    },
+    "trigger": {
+      "zh": "当你的功能在自己电脑上跑得很完美，准备发给真实用户前的最后 1 小时。",
+      "en": "Right before shipping, when everything works smoothly on your machine under ideal conditions."
+    },
+    "mechanism": {
+      "zh": [
+        "按 4 类极端态逐一拷问：空状态（0 数据）、超长文本/双语换行、弱网/断网、非法或重复点击",
+        "检查移动端窄屏与深浅色模式下的遮挡与溢出",
+        "把高发致命边缘态补上优雅降级提示，低频项记录在案"
+      ],
+      "en": [
+        "Audit 4 extreme states: empty data, ultra-long/bilingual text overflow, offline/slow network, and duplicate/invalid inputs",
+        "Check narrow mobile viewports and dark/light mode contrast",
+        "Add graceful fallbacks for high-impact edge cases and log the rest"
+      ]
+    },
+    "deliverable": {
+      "zh": "一份已勾选修复的《上线前边缘态通关表》",
+      "en": "A signed-off Pre-Launch Edge-Case Audit sheet"
+    },
+    "current_stack": {
+      "zh": "固定审计 Prompt + 浏览器设备模拟器",
+      "en": "Standard audit Prompt + browser DevTools device emulator"
+    },
+    "anti_pattern": {
+      "zh": "不要为了修复发生概率万分之一的极端 Bug 而无限推迟首次发布。",
+      "en": "Don't delay launch indefinitely chasing 0.01% theoretical edge cases."
+    },
+    "combos": [
+      "eng-03",
+      "des-01"
+    ],
+    "tags": {
+      "layer": "Building",
+      "form_factor": "Skill / Template",
+      "leverage": "Risk"
+    }
+  },
+  {
+    "id": "prd-04",
+    "drawer": "product-architect",
+    "title": {
+      "zh": "核心路径走查表",
+      "en": "First-30-Seconds Walkthrough"
+    },
+    "metaphor": {
+      "zh": "强迫自己失忆，以完全陌生人的眼睛看前 30 秒",
+      "en": "Simulating total amnesia to experience your product's first 30 seconds"
+    },
+    "trigger": {
+      "zh": "当你对自己的产品太熟悉，已经看不出新用户进来第一眼会卡在哪里时。",
+      "en": "When you're so close to your own product that you can't see where a newcomer gets lost."
+    },
+    "mechanism": {
+      "zh": [
+        "截下首屏到完成首次核心动作的 3–5 步连续截图",
+        "让 AI 扮演“毫无背景、只有 30 秒耐心的陌生访客”，逐屏说出困惑点",
+        "砍掉首次体验前的所有非必要弹窗、注册墙或术语解释"
+      ],
+      "en": [
+        "Capture 3–5 sequential screenshots from landing to the first 'aha' action",
+        "Have AI roleplay an impatient first-time visitor with zero context to call out every point of confusion",
+        "Remove any non-essential modals, sign-up walls, or jargon blocking that first action"
+      ]
+    },
+    "deliverable": {
+      "zh": "一份标注了 3 个最大流失摩擦点的《首屏体验改造单》",
+      "en": "A First-Run Friction Report highlighting the top 3 drop-off points"
+    },
+    "current_stack": {
+      "zh": "多模态视觉模型 + 连续截图走查",
+      "en": "Vision-capable LLM + sequential screenshot walkthrough"
+    },
+    "anti_pattern": {
+      "zh": "不要用“加一段更长的新手引导文字”来解决界面本身不直观的问题。",
+      "en": "Don't patch an unintuitive UI by slapping a longer onboarding tooltip on top of it."
+    },
+    "combos": [
+      "des-01",
+      "grw-02"
+    ],
+    "tags": {
+      "layer": "Building",
+      "form_factor": "Prompt / Protocol",
+      "leverage": "Quality"
+    }
+  }
+]

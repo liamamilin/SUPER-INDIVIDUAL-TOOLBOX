@@ -1,0 +1,198 @@
+[
+  {
+    "id": "leg-01",
+    "drawer": "legal-finance",
+    "title": {
+      "zh": "合同与条款排雷仪",
+      "en": "Contract & Clause Minefield Scanner"
+    },
+    "metaphor": {
+      "zh": "签字前先用 X 光把霸王条款和隐形陷阱照出来",
+      "en": "X-raying contracts for hidden traps before you ever sign"
+    },
+    "trigger": {
+      "zh": "当你接到外包单、平台协议或合作合同，面对密密麻麻十几页法律术语头大、怕踩坑时。",
+      "en": "When facing a 15-page client contract, platform ToS, or partnership agreement packed with dense legalese."
+    },
+    "mechanism": {
+      "zh": [
+        "将脱敏后的合同全文喂给模型，重点扫描 5 大雷区：知识产权归属、无限连带赔偿、单方解约权、付款账期、竞业限制",
+        "要求用大白话标出“高危红灯条款”，并解释最坏情况下你会损失什么",
+        "针对每条红灯条款生成 1 段礼貌但坚定的修改替代措辞发给对方协商"
+      ],
+      "en": [
+        "Feed the redacted contract to AI and scan 5 minefields: IP ownership, uncapped liability, unilateral termination, payment terms, and non-competes",
+        "Flag red-light clauses in plain language, spelling out the worst-case downside",
+        "Draft a polite, firm counter-clause for each red flag to send back for negotiation"
+      ]
+    },
+    "deliverable": {
+      "zh": "一份《高危条款红绿灯清单》及可直接复制的修改建议措辞",
+      "en": "A Red-Flag Clause Report with ready-to-send negotiation counter-language"
+    },
+    "current_stack": {
+      "zh": "本地脱敏 + 长上下文推理模型合同审查 Prompt",
+      "en": "Local PII redaction + long-context reasoning contract-review Prompt"
+    },
+    "anti_pattern": {
+      "zh": "涉及大额资金、股权或跨境诉讼风险时，AI 只能做初筛准备，最终拍板必须找执业律师把关。",
+      "en": "For high-stakes equity, large sums, or cross-border disputes, AI is only a first pass—hire a licensed attorney."
+    },
+    "combos": [
+      "leg-04",
+      "eng-04"
+    ],
+    "tags": {
+      "layer": "Thinking",
+      "form_factor": "Prompt / Protocol",
+      "leverage": "Risk"
+    }
+  },
+  {
+    "id": "leg-02",
+    "drawer": "legal-finance",
+    "title": {
+      "zh": "定价与盈亏平衡模拟器",
+      "en": "Pricing & Break-Even Simulator"
+    },
+    "metaphor": {
+      "zh": "别拍脑袋定个便宜价，先算清回本线和时薪底线",
+      "en": "Replacing gut-feel pricing with hard margin and break-even math"
+    },
+    "trigger": {
+      "zh": "当你准备给自己的数字产品、订阅服务或咨询项目定价，纠结卖 9 块还是 99 块时。",
+      "en": "When pricing a digital product, SaaS tier, or consulting offer and guessing between $9 and $99."
+    },
+    "mechanism": {
+      "zh": [
+        "列出所有显性与隐性成本：固定工具/域名费、单用户 API 变动成本、支付渠道抽成与你的时间机会成本",
+        "建立 3 档价格与转化率假设（悲观 / 基准 / 乐观），算出各自达到盈亏平衡所需的最低付费人数",
+        "对比“薄利多销的客服噩梦”与“高客单小而美”，锁定最匹配一人产能的定价档位"
+      ],
+      "en": [
+        "List all fixed and variable costs: domains, per-user API compute, payment fees, and your own hourly floor",
+        "Model 3 price/conversion scenarios (bear, base, bull) to find the exact break-even customer count for each",
+        "Compare high-volume support burden against higher-ticket focus to pick a price a solo operator can sustain"
+      ]
+    },
+    "deliverable": {
+      "zh": "一张《3 档定价盈亏平衡与毛利测算表》",
+      "en": "A 3-tier Pricing, Margin & Break-Even simulation table"
+    },
+    "current_stack": {
+      "zh": "电子表格 / 极简交互式计算器 + 商业测算 Prompt",
+      "en": "Spreadsheet / interactive calculator + unit-economics Prompt"
+    },
+    "anti_pattern": {
+      "zh": "不要只按成本加成定价，更不要因为不好意思收钱而把高价值工具定成白菜价。",
+      "en": "Don't rely purely on cost-plus pricing, and never underprice high-leverage work out of imposter syndrome."
+    },
+    "combos": [
+      "cos-04",
+      "leg-04"
+    ],
+    "tags": {
+      "layer": "Thinking",
+      "form_factor": "Skill / Template",
+      "leverage": "Risk"
+    }
+  },
+  {
+    "id": "leg-03",
+    "drawer": "legal-finance",
+    "title": {
+      "zh": "隐私与开源协议自查表",
+      "en": "Privacy & Open-Source License Audit"
+    },
+    "metaphor": {
+      "zh": "开源发布前守住版权与用户隐私的合规底线",
+      "en": "Checking license obligations and privacy basics before going public"
+    },
+    "trigger": {
+      "zh": "当你准备把个人项目开源到 GitHub 或上线面向公众的静态站，不确定该选什么协议、有没有泄密风险时。",
+      "en": "When open-sourcing a repo or launching a public web app and checking for license clashes or leaked secrets."
+    },
+    "mechanism": {
+      "zh": [
+        "根据商业意图选定开源协议（MIT 宽松商用 / Apache 含专利保护 / AGPL 防闭源套壳）并核对第三方依赖兼容性",
+        "扫描代码库与 Git 历史，确保零硬编码 API Key、个人邮箱或私有路径残留",
+        "若站点使用本地存储或统计代码，在页脚补齐极简透明的隐私声明（如“数据仅存本地，零云端上传”）"
+      ],
+      "en": [
+        "Match your license to intent (MIT for permissive, Apache for patent grant, AGPL for copyleft) and verify dependency compatibility",
+        "Scan the repo and Git history to guarantee zero hardcoded API keys, private emails, or local paths",
+        "Add a plain-English privacy note in the footer if using localStorage or analytics"
+      ]
+    },
+    "deliverable": {
+      "zh": "一份通过核验的《LICENSE + 密钥清零 + 隐私声明》发布前包",
+      "en": "A verified pre-release pack: LICENSE file, zero-secrets scan, and plain privacy note"
+    },
+    "current_stack": {
+      "zh": "开源协议自查清单 + 本地密钥扫描命令（git grep / gitleaks）",
+      "en": "License checklist + local secret-scanning CLI (git grep / gitleaks)"
+    },
+    "anti_pattern": {
+      "zh": "不要以为“删掉最新一次提交里的 API Key”就安全了；只要推过 Git 历史，Key 必须立刻作废重签。",
+      "en": "Deleting a leaked API key in a later commit isn't enough—once pushed to Git history, rotate it immediately."
+    },
+    "combos": [
+      "eng-04",
+      "eng-03"
+    ],
+    "tags": {
+      "layer": "Building",
+      "form_factor": "Skill / Template",
+      "leverage": "Risk"
+    }
+  },
+  {
+    "id": "leg-04",
+    "drawer": "legal-finance",
+    "title": {
+      "zh": "独立报价单与收款防坑模版",
+      "en": "Solo Proposal & Payment Shield"
+    },
+    "metaphor": {
+      "zh": "把范围、修改次数和首付款写死在开工之前",
+      "en": "Locking scope, revision caps, and deposits before writing a single line"
+    },
+    "trigger": {
+      "zh": "当你接独立咨询、定制开发或设计单，怕遇到需求无限膨胀、反复免费返工或干完活被拖欠尾款时。",
+      "en": "When taking solo client work and wanting to prevent endless scope creep, free revisions, or ghosted invoices."
+    },
+    "mechanism": {
+      "zh": [
+        "在报价单里明确写出“包含项（In-Scope）”与“明确不包含项（Out-of-Scope）”",
+        "绑定免费修改次数上限（如 2 轮），超出部分按透明的按次或按天费率计费",
+        "强制执行里程碑付款（如 50% 预付款启动，尾款结清后再移交最终源码或源文件）"
+      ],
+      "en": [
+        "Explicitly list both In-Scope deliverables and Out-of-Scope exclusions in the proposal",
+        "Cap included revisions (e.g., 2 rounds) with a transparent rate for additional changes",
+        "Enforce milestone billing (e.g., 50% deposit to start, final source handoff only upon final payment)"
+      ]
+    },
+    "deliverable": {
+      "zh": "一份 1 页纸极简专业《独立项目报价与里程碑确认单》",
+      "en": "A crisp 1-page Solo Proposal & Milestone Agreement template"
+    },
+    "current_stack": {
+      "zh": "Markdown / PDF 报价单模板 + 范围边界生成 Prompt",
+      "en": "Markdown / PDF proposal template + scope-boundary Prompt"
+    },
+    "anti_pattern": {
+      "zh": "不要因为是熟人介绍就省去书面范围确认；越是熟人，口头模糊越容易最后伤感情。",
+      "en": "Never skip written scope confirmation for friends or referrals—vague verbal deals ruin relationships fastest."
+    },
+    "combos": [
+      "leg-01",
+      "leg-02"
+    ],
+    "tags": {
+      "layer": "Distribution",
+      "form_factor": "Skill / Template",
+      "leverage": "Risk"
+    }
+  }
+]

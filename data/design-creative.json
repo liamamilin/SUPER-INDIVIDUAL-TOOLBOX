@@ -1,0 +1,198 @@
+[
+  {
+    "id": "des-01",
+    "drawer": "design-creative",
+    "title": {
+      "zh": "截图级 UI 毒舌诊断器",
+      "en": "Screenshot UI Brutal Critic"
+    },
+    "metaphor": {
+      "zh": "请一位审美极高的设计总监盯着你的截图挑刺",
+      "en": "A ruthless design director tearing apart your UI screenshots"
+    },
+    "trigger": {
+      "zh": "当你自己写完前端页面，总觉得“哪里土土的、像程序员写的”，却说不出具体该改哪几个像素时。",
+      "en": "When your hand-coded UI feels amateurish, but you can't pinpoint which pixels or spacing rules are off."
+    },
+    "mechanism": {
+      "zh": [
+        "截取完整首屏与移动端窄屏两张图，喂给多模态模型",
+        "强制按“视觉层级、留白呼吸感、对比度、对齐精度”4 个维度只挑毛病、禁止夸奖",
+        "要求每一条批评必须附带具体的 CSS 修改数值（如字号、行高、padding、色值）"
+      ],
+      "en": [
+        "Feed full desktop and mobile viewport screenshots into a vision-capable model",
+        "Enforce zero-praise critique across 4 axes: visual hierarchy, whitespace, contrast, and alignment",
+        "Require every critique to include exact CSS fixes (font sizes, line-heights, padding, hex codes)"
+      ]
+    },
+    "deliverable": {
+      "zh": "一份带具体 CSS 像素/色值修改建议的《界面整容清单》",
+      "en": "A UI Facelift Checklist with exact CSS property adjustments"
+    },
+    "current_stack": {
+      "zh": "多模态视觉模型 + 固定 UI 评审 System Prompt",
+      "en": "Vision LLM + strict UI critique System Prompt"
+    },
+    "anti_pattern": {
+      "zh": "不要一次把 20 条建议全改完；每次只改影响最大的前 3 条（通常是留白和层级），再重新截图复查。",
+      "en": "Don't apply 20 tweaks at once; fix the top 3 hierarchy/spacing issues first, then re-evaluate."
+    },
+    "combos": [
+      "des-02",
+      "prd-04"
+    ],
+    "tags": {
+      "layer": "Building",
+      "form_factor": "Prompt / Protocol",
+      "leverage": "Quality"
+    }
+  },
+  {
+    "id": "des-02",
+    "drawer": "design-creative",
+    "title": {
+      "zh": "视觉风格宪法（Design Token）",
+      "en": "Visual Constitution (Design Tokens)"
+    },
+    "metaphor": {
+      "zh": "把色板、字体和间距写进宪法，告别随手乱配色",
+      "en": "Codifying colors, type, and spacing so you never eyeball styles again"
+    },
+    "trigger": {
+      "zh": "当你的页面越写越多，按钮颜色、圆角大小和字体层级开始各自为战、整体显得杂乱时。",
+      "en": "When growing pages accumulate inconsistent grays, random border-radii, and mismatched typography."
+    },
+    "mechanism": {
+      "zh": [
+        "锁定极简色板：1 个主背景、1 个卡片表面、2 级文字灰度、1 个高识别度强调色",
+        "锁定 4px/8px 基准间距阶梯与 4 级字号标尺（标题、副标、正文、铭牌）",
+        "将上述规则全部封装为 CSS `:root` 变量文件，后续开发严禁写死魔法数值"
+      ],
+      "en": [
+        "Lock a strict palette: 1 canvas background, 1 surface, 2 text grays, and 1 signature accent",
+        "Lock a 4px/8px spacing scale and a 4-step typography ramp (display, heading, body, meta)",
+        "Export everything into a CSS :root tokens file and ban hardcoded magic values thereafter"
+      ]
+    },
+    "deliverable": {
+      "zh": "一份可直接引用的 `tokens.css` 视觉宪法文件",
+      "en": "A drop-in tokens.css file governing the entire visual system"
+    },
+    "current_stack": {
+      "zh": "原生 CSS Custom Properties + AI 配色对比度校验",
+      "en": "Native CSS Custom Properties + AI contrast-ratio checker"
+    },
+    "anti_pattern": {
+      "zh": "不要为个人项目照搬大厂上百个 Token 的设计系统，15 个核心变量足够撑起极高质感。",
+      "en": "Don't copy enterprise 200-token design systems; 15 disciplined variables deliver better craft solo."
+    },
+    "combos": [
+      "des-04",
+      "eng-01"
+    ],
+    "tags": {
+      "layer": "Memory",
+      "form_factor": "Skill / Template",
+      "leverage": "Quality"
+    }
+  },
+  {
+    "id": "des-03",
+    "drawer": "design-creative",
+    "title": {
+      "zh": "多模态素材风格锁",
+      "en": "Multimodal Style Lock"
+    },
+    "metaphor": {
+      "zh": "给 AI 画师和作曲家发同一本美术设定集",
+      "en": "Handing your AI illustrators and composers the exact same art bible"
+    },
+    "trigger": {
+      "zh": "当你用 AI 生成配图、封面或音视频素材时，每张单看不错，拼在一起却画风割裂像拼夕夕时。",
+      "en": "When AI-generated illustrations, covers, or media look fine alone but clash wildly when placed together."
+    },
+    "mechanism": {
+      "zh": [
+        "确定 1 种极具辨识度的统一美学锚点（如特定插画流派、纸张质感、固定主色调）",
+        "把风格描述词拆成“不可变底座（画风/光线/材质）”与“可变槽位（主体/动作）”",
+        "每次生成新素材只替换可变槽位，并用参考图（Style Reference）锁死一致性"
+      ],
+      "en": [
+        "Choose one unmistakable aesthetic anchor (specific illustration movement, paper grain, fixed palette)",
+        "Split prompts into an immutable Style Base (medium, lighting, texture) and a swappable Subject Slot",
+        "Swap only the subject per asset and enforce consistency with reference images"
+      ]
+    },
+    "deliverable": {
+      "zh": "一套可复用的《视觉/音视频风格锁定 Prompt 模板》与参考图包",
+      "en": "A reusable Style-Lock Prompt template paired with a curated reference pack"
+    },
+    "current_stack": {
+      "zh": "图像/音乐生成工具 + 固定 Style Prompt 片段库",
+      "en": "Image/audio generation tools + reusable Style Prompt library"
+    },
+    "anti_pattern": {
+      "zh": "不要往风格底座里堆砌互相冲突的修饰词（如同时写“极简扁平”和“超写实 8K 虚幻引擎”）。",
+      "en": "Don't stuff conflicting keywords into the base (e.g., 'minimalist flat' alongside 'photorealistic 8K')."
+    },
+    "combos": [
+      "des-02",
+      "grw-01"
+    ],
+    "tags": {
+      "layer": "Memory",
+      "form_factor": "Skill / Template",
+      "leverage": "Quality"
+    }
+  },
+  {
+    "id": "des-04",
+    "drawer": "design-creative",
+    "title": {
+      "zh": "高审美界面逆向拆解器",
+      "en": "UI Aesthetic Reverse-Engineer"
+    },
+    "metaphor": {
+      "zh": "把神仙网站的布局与留白规律，翻译成自己的 CSS",
+      "en": "Translating world-class site layouts and rhythm into your own CSS"
+    },
+    "trigger": {
+      "zh": "当你看到一个极度克制高级的网站，想学它的设计语言，却不知从何下手转化为代码时。",
+      "en": "When you spot a stunning website and want to absorb its spatial rhythm into code without copying it blindly."
+    },
+    "mechanism": {
+      "zh": [
+        "截取参考网站的 2–3 个关键区块，要求 AI 剥离具体业务内容，只提炼“栅格比例、留白节奏、边框与阴影克制度”",
+        "将其抽象为 5 条可迁移的布局原则（而非照抄像素）",
+        "直接生成基于该原则的极简 HTML/CSS 骨架 Demo 供自己二次改造"
+      ],
+      "en": [
+        "Feed 2–3 key sections of a reference site and ask AI to ignore content, extracting only grid ratios, whitespace rhythm, and border/shadow restraint",
+        "Distill those observations into 5 transferable layout rules rather than pixel-copying",
+        "Generate a clean HTML/CSS skeleton applying those rules to your own content"
+      ]
+    },
+    "deliverable": {
+      "zh": "一份《参考界面设计语言拆解单》+ 可运行的极简布局 Demo",
+      "en": "A Design-Language Breakdown sheet plus a runnable minimalist layout demo"
+    },
+    "current_stack": {
+      "zh": "多模态模型 + 浏览器检查器（DevTools）",
+      "en": "Vision LLM + browser DevTools"
+    },
+    "anti_pattern": {
+      "zh": "拆解的是“骨架规律与克制感”，绝不是直接扒别人的品牌色和文案做山寨克隆。",
+      "en": "Extract structural rhythm and restraint—never clone another brand's exact palette or copy."
+    },
+    "combos": [
+      "des-02",
+      "eng-01"
+    ],
+    "tags": {
+      "layer": "Building",
+      "form_factor": "Prompt / Protocol",
+      "leverage": "Quality"
+    }
+  }
+]

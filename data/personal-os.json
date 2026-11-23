@@ -1,0 +1,198 @@
+[
+  {
+    "id": "os-01",
+    "drawer": "personal-os",
+    "title": {
+      "zh": "认知降噪复位器",
+      "en": "Cognitive Noise Resetter"
+    },
+    "metaphor": {
+      "zh": "给发烫的大脑按下物理复位键",
+      "en": "A physical reset button for an overheated brain"
+    },
+    "trigger": {
+      "zh": "当你陷入无休止的过度思考、对遥远的不确定性焦虑，甚至连休息时都无法真正放松沉浸时。",
+      "en": "When you're spiraling in overthinking, anxious about distant uncertainties, or unable to unwind even during downtime."
+    },
+    "mechanism": {
+      "zh": [
+        "剥离抽象的现代焦虑，强制列出此刻物理层面的 3 个基本事实（安全、温饱、当下无致命威胁）",
+        "把脑中盘旋的担忧一分为二：“此刻能动”与“此刻不可控”",
+        "对不可控项挂起封存，只从可控项里挑 1 件 15 分钟内可完成的小动作立刻执行"
+      ],
+      "en": [
+        "Strip away abstract anxieties by listing 3 immediate physical facts (safe, fed, no imminent threat)",
+        "Split swirling worries into two buckets: actionable right now vs. out of your control today",
+        "Shelve the uncontrollable items and execute one 15-minute micro-action immediately"
+      ]
+    },
+    "deliverable": {
+      "zh": "一张极简《当下锚定单》（3 个物理事实 + 1 个 15 分钟微动作）",
+      "en": "A minimalist Present-Anchor Card (3 physical facts + 1 fifteen-minute micro-action)"
+    },
+    "current_stack": {
+      "zh": "置顶对话协议 / 手机快捷指令（1 分钟文字或语音复位）",
+      "en": "Pinned chat protocol or mobile shortcut (1-minute text/voice reset)"
+    },
+    "anti_pattern": {
+      "zh": "不要用它来逃避真正需要拍板的紧急危机；它是用来清噪的，不是用来装鸵鸟的。",
+      "en": "Don't use it to dodge genuine urgent crises; it clears mental noise, not real emergencies."
+    },
+    "combos": [
+      "os-03",
+      "cos-04"
+    ],
+    "tags": {
+      "layer": "Thinking",
+      "form_factor": "Prompt / Protocol",
+      "leverage": "Risk"
+    }
+  },
+  {
+    "id": "os-02",
+    "drawer": "personal-os",
+    "title": {
+      "zh": "概念记忆编码器",
+      "en": "Concept Mnemonic Encoder"
+    },
+    "metaphor": {
+      "zh": "给抽象概念焊上画面挂钩，直接钉进记忆",
+      "en": "Welding vivid visual hooks onto abstract concepts"
+    },
+    "trigger": {
+      "zh": "当你跨界学习陌生硬核领域，当下看懂了原理，但过两天就忘、临场调用不出来时。",
+      "en": "When learning an unfamiliar domain where everything makes sense today, but you draw a blank two days later."
+    },
+    "mechanism": {
+      "zh": [
+        "剥离冗长定义，只提炼待记概念的 1 个核心特征或底层结构",
+        "将其强绑定到一个具象、有动作感或空间感的“编码物/画面”上",
+        "反向盲测还原：只看编码画面，强制用自己的话复述原概念并修补断裂处"
+      ],
+      "en": [
+        "Strip verbose definitions down to 1 core trait or structural mechanism",
+        "Bind the concept to a concrete, action-driven, or spatial visual anchor",
+        "Run a blind recall test: look only at the visual anchor, reconstruct the concept in your own words, and patch gaps"
+      ]
+    },
+    "deliverable": {
+      "zh": "一组高还原度的“编码画面 + 概念映射卡”",
+      "en": "A set of high-recall visual anchor & concept mapping cards"
+    },
+    "current_stack": {
+      "zh": "自定义记忆编码 Skill + 间隔重复工具（Anki / 本地 Markdown）",
+      "en": "Custom Mnemonic Encoding Skill + spaced repetition (Anki / local Markdown)"
+    },
+    "anti_pattern": {
+      "zh": "不要给查一下就能用的 API 参数或琐碎日期做编码；只给需要内化的底层框架用。",
+      "en": "Don't encode lookup trivia or syntax; reserve it for core mental models you need on tap."
+    },
+    "combos": [
+      "ops-02",
+      "cos-02"
+    ],
+    "tags": {
+      "layer": "Memory",
+      "form_factor": "Skill / Template",
+      "leverage": "Quality"
+    }
+  },
+  {
+    "id": "os-03",
+    "drawer": "personal-os",
+    "title": {
+      "zh": "上下文切换熔断器",
+      "en": "Context-Switch Circuit Breaker"
+    },
+    "metaphor": {
+      "zh": "给深度工作拉上防切屏的物理警戒线",
+      "en": "A physical firewall protecting deep work blocks"
+    },
+    "trigger": {
+      "zh": "当你上午写代码、中午改文案、下午调 UI，大脑在多个岗位间反复切屏导致全天精疲力竭却零交付时。",
+      "en": "When juggling code, copy, and UI in the same morning leaves you drained with zero shipped output."
+    },
+    "mechanism": {
+      "zh": [
+        "开工前锁定当前 90 分钟的唯一虚拟岗位（例如：只当工程师，拒绝审文案）",
+        "过程中冒出的跨岗位灵感或杂念，5 秒内丢进“暂存收件箱”，绝不顺手切窗口处理",
+        "计时结束后统一分拣暂存区，决定直接丢弃还是排入下一个专场"
+      ],
+      "en": [
+        "Lock a single virtual role for the next 90 minutes (e.g., Engineer only—no copywriting)",
+        "Dump any cross-role ideas or distractions into a Parking Lot inbox within 5 seconds without switching windows",
+        "Triage the Parking Lot only after the timer ends—either discard or schedule into a dedicated block"
+      ]
+    },
+    "deliverable": {
+      "zh": "一段无切屏污染的深度产出 + 一份分拣后的《暂存灵感队列》",
+      "en": "One uncontaminated deep-work deliverable + a triaged Parking Lot queue"
+    },
+    "current_stack": {
+      "zh": "本地极简倒计时 + 一键速记脚本 / 语音转文字收件箱",
+      "en": "Local minimalist timer + one-key capture script or voice-to-text inbox"
+    },
+    "anti_pattern": {
+      "zh": "不要把单次熔断设得超过 2 小时；也不要在等待外部紧急响应的窗口期强行开启。",
+      "en": "Don't set blocks longer than 2 hours, or activate it while awaiting time-critical external blockers."
+    },
+    "combos": [
+      "os-04",
+      "ops-02"
+    ],
+    "tags": {
+      "layer": "Thinking",
+      "form_factor": "Skill / Template",
+      "leverage": "Time"
+    }
+  },
+  {
+    "id": "os-04",
+    "drawer": "personal-os",
+    "title": {
+      "zh": "每周复盘与清仓仪",
+      "en": "Weekly Review & Backlog Purger"
+    },
+    "metaphor": {
+      "zh": "每周一次给大脑和半成品做断舍离",
+      "en": "A weekly declutter for your brain and half-built projects"
+    },
+    "trigger": {
+      "zh": "当你手里攒了一堆“改天再做”的半成品、收藏夹吃灰，感觉隐隐焦虑却说不清在忙什么时。",
+      "en": "When half-finished projects and unread bookmarks pile up, creating background anxiety with unclear progress."
+    },
+    "mechanism": {
+      "zh": [
+        "列出本周已完成交付物与所有卡住的半成品清单",
+        "强制执行“三选一清仓”：继续推进（限 3 项）、明确归档放弃、或降级为低优备忘",
+        "提炼本周重复超过 2 次的摩擦点，指定 1 个下周要封装或自动化的目标"
+      ],
+      "en": [
+        "Export this week's shipped deliverables alongside all stalled work-in-progress",
+        "Force a 3-way purge: keep active (max 3), explicitly kill/archive, or demote to backlog",
+        "Spot any friction repeated more than twice this week and pick 1 target to templatize or automate next week"
+      ]
+    },
+    "deliverable": {
+      "zh": "一份《周度清仓报告》（3 项主线 + 主动放弃清单 + 1 个待自动化摩擦点）",
+      "en": "A Weekly Purge Report (top 3 priorities + explicit kill list + 1 friction point to automate)"
+    },
+    "current_stack": {
+      "zh": "固定周日复盘模板 + 15 分钟 AI 对话式引导访谈",
+      "en": "Fixed Sunday review template + 15-minute AI-guided interview"
+    },
+    "anti_pattern": {
+      "zh": "不要把它写成自我检讨的流水账日记；核心是做“减法决策”，不是抒发愧疚。",
+      "en": "Don't turn it into a guilt-ridden journal; the goal is ruthless subtraction, not self-criticism."
+    },
+    "combos": [
+      "ops-04",
+      "prd-01"
+    ],
+    "tags": {
+      "layer": "Memory",
+      "form_factor": "Prompt / Protocol",
+      "leverage": "Time"
+    }
+  }
+]

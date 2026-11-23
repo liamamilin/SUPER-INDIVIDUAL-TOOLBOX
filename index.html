@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SUPER-INDIVIDUAL-TOOLBOX · 超级个体工具箱</title>
+  <meta name="description" content="Equip One. Run Like a Team. A bilingual workbench of 36 battle-tested capability tools across 9 virtual roles for solo builders in the LLM era." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <span class="brand-badge">V1.0</span>
+        <div>
+          <h1 class="brand-title" data-i18n="brandTitle">SUPER-INDIVIDUAL-TOOLBOX</h1>
+          <p class="brand-slogan" data-i18n="brandSlogan">一人成军，顺手兵器库 · Equip One. Run Like a Team.</p>
+        </div>
+      </div>
+
+      <div class="topbar-actions">
+        <div class="segmented" role="group" aria-label="View Mode">
+          <button id="btnViewDrawer" class="seg-btn active" data-view="drawer" data-i18n="viewDrawer">抽屉视图</button>
+          <button id="btnViewXray" class="seg-btn" data-view="xray" data-i18n="viewXray">X光体检</button>
+        </div>
+        <button id="btnLang" class="icon-btn" title="Switch Language">EN</button>
+        <button id="btnTheme" class="icon-btn" title="Toggle Theme">◐</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="loadout-bar">
+    <div class="container loadout-inner">
+      <div class="loadout-status">
+        <span class="status-dot"></span>
+        <span id="loadoutSummary">已装配 0/36 · 覆盖 0/9 岗位</span>
+      </div>
+      <div class="loadout-actions">
+        <button id="btnFilterLoadout" class="chip-btn" data-i18n="onlyLoadout">只看已装配</button>
+        <button id="btnExportMd" class="chip-btn accent" data-i18n="exportMd">导出 Markdown</button>
+        <button id="btnClearLoadout" class="chip-btn subtle" data-i18n="clearLoadout">清空</button>
+      </div>
+    </div>
+  </section>
+
+  <main class="container main-content">
+    <!-- Controls: Search + Orthogonal Filters -->
+    <section class="controls-panel">
+      <div class="search-wrap">
+        <input type="search" id="searchInput" class="search-input" placeholder="搜索工具名、编号、痛点或交付物... (如 cos-01 / 红队)" />
+      </div>
+      <div class="filter-row">
+        <div class="filter-group" id="formFilterGroup">
+          <span class="filter-label" data-i18n="filterForm">载体:</span>
+        </div>
+        <div class="filter-group" id="leverageFilterGroup">
+          <span class="filter-label" data-i18n="filterLeverage">杠杆:</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Drawer Navigation (Visible in Drawer Mode) -->
+    <section id="drawerNavSection" class="drawer-nav-section">
+      <div id="drawerTabs" class="drawer-tabs"></div>
+      <div id="drawerBanner" class="drawer-banner hidden"></div>
+    </section>
+
+    <!-- X-Ray Summary (Visible in X-Ray Mode) -->
+    <section id="xraySummarySection" class="xray-summary hidden"></section>
+
+    <!-- Main Grid / Grouped Container -->
+    <section id="cardsContainer" class="cards-container"></section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span data-i18n="footerNote">零依赖静态架构 · 所有装配数据仅存于本地浏览器 (localStorage)，零云端上传。</span>
+      <span class="mono">36 TOOLS · 9 DRAWERS · 5 LAYERS</span>
+    </div>
+  </footer>
+
+  <!-- Detail Modal / Slide-over -->
+  <div id="modalBackdrop" class="modal-backdrop hidden" aria-hidden="true">
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-header">
+        <div class="modal-badges" id="modalBadges"></div>
+        <button id="modalClose" class="icon-btn" aria-label="Close">✕</button>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast hidden"></div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

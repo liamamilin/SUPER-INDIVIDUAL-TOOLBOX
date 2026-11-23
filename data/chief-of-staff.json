@@ -1,0 +1,198 @@
+[
+  {
+    "id": "cos-01",
+    "drawer": "chief-of-staff",
+    "title": {
+      "zh": "红队拷问器",
+      "en": "Red-Team Devil's Advocate"
+    },
+    "metaphor": {
+      "zh": "雇一个专门唱反调的毒舌合伙人",
+      "en": "A ruthless co-founder paid to kill your bad ideas"
+    },
+    "trigger": {
+      "zh": "当你对一个新点子极度兴奋、准备立刻熬夜开工，但身边没人给你泼冷水时。",
+      "en": "When you're hyped about a new idea and ready to build, with no one around to challenge your blind spots."
+    },
+    "mechanism": {
+      "zh": [
+        "把你的方案压缩成 3 句话的核心假设",
+        "强制 AI 站在“做空者/竞争对手”立场，列出 3 个最致命的死法",
+        "对每个死法追问：有没有低成本的证伪实验（48 小时内可验证）"
+      ],
+      "en": [
+        "Compress your plan into 3 core assumptions",
+        "Force the AI into a short-seller/competitor persona to list 3 fatal failure modes",
+        "For each failure mode, design a low-cost falsification test runnable within 48 hours"
+      ]
+    },
+    "deliverable": {
+      "zh": "一份含 3 个致命死法与对应 48 小时证伪实验的《排雷清单》",
+      "en": "A Failure-Mode Checklist with 3 fatal risks and 48-hour falsification tests"
+    },
+    "current_stack": {
+      "zh": "高推理模型对话 + 禁用顺从偏好的 System Prompt",
+      "en": "Reasoning model chat + strict anti-sycophancy System Prompt"
+    },
+    "anti_pattern": {
+      "zh": "不要在灵感刚萌芽、还没成形时使用，否则容易把好苗子过早扼杀。",
+      "en": "Don't use during raw brainstorming; it kills fragile ideas before they take shape."
+    },
+    "combos": [
+      "prd-01",
+      "cos-04"
+    ],
+    "tags": {
+      "layer": "Thinking",
+      "form_factor": "Prompt / Protocol",
+      "leverage": "Risk"
+    }
+  },
+  {
+    "id": "cos-02",
+    "drawer": "chief-of-staff",
+    "title": {
+      "zh": "第一性原理拆解刀",
+      "en": "First-Principles Scalpel"
+    },
+    "metaphor": {
+      "zh": "扒掉行业惯例的外壳，只看底层物理约束",
+      "en": "Stripping away industry dogma down to raw constraints"
+    },
+    "trigger": {
+      "zh": "当你陷入“别人都这么做，所以我也要做”的惯性，或者觉得某个方案成本高得离谱时。",
+      "en": "When you're copying competitors out of habit or facing a seemingly impossible cost barrier."
+    },
+    "mechanism": {
+      "zh": [
+        "列出当前主流做法中默认成立的 5 条“行业常识”",
+        "逐条拷问：这是物理/法律铁律，还是历史遗留的习惯？",
+        "删掉所有非铁律约束，仅基于剩余底线重新拼装最简解法"
+      ],
+      "en": [
+        "List 5 unspoken assumptions baked into the current standard approach",
+        "Interrogate each: is this a hard law of physics/economics, or just legacy convention?",
+        "Delete every convention and rebuild the simplest solution from the remaining hard constraints"
+      ]
+    },
+    "deliverable": {
+      "zh": "一张《真约束 vs. 伪惯例》对照表及 1 个非共识替代方案",
+      "en": "A Hard-Constraints vs. Conventions table plus 1 non-consensus alternative"
+    },
+    "current_stack": {
+      "zh": "多轮苏格拉底追问 Prompt + 思维导图/白板",
+      "en": "Multi-turn Socratic Prompt + whiteboard"
+    },
+    "anti_pattern": {
+      "zh": "不要在已有成熟廉价标准件的琐事上重造轮子，把这把刀留给核心差异化环节。",
+      "en": "Don't reinvent cheap commodity parts; save this scalpel for core differentiation."
+    },
+    "combos": [
+      "prd-01",
+      "eng-01"
+    ],
+    "tags": {
+      "layer": "Thinking",
+      "form_factor": "Prompt / Protocol",
+      "leverage": "Quality"
+    }
+  },
+  {
+    "id": "cos-03",
+    "drawer": "chief-of-staff",
+    "title": {
+      "zh": "竞品信号雷达",
+      "en": "Competitor Signal Radar"
+    },
+    "metaphor": {
+      "zh": "不看对手吹什么，只盯用户骂什么和定价怎么变",
+      "en": "Ignoring competitor hype to track user complaints and pricing shifts"
+    },
+    "trigger": {
+      "zh": "当你想切入一个细分赛道，需要快速看清现有玩家的真实软肋与未被满足的缺口时。",
+      "en": "When entering a niche and needing to spot incumbents' real weaknesses and unmet gaps fast."
+    },
+    "mechanism": {
+      "zh": [
+        "锁定 3–5 个标杆竞品，抓取其差评区、更新日志（Changelog）与定价页",
+        "让 AI 按“高频吐槽点 / 过度臃肿功能 / 隐形门槛”三个维度聚类",
+        "提炼出 1 个对手因为船大难掉头而不敢做的切入点"
+      ],
+      "en": [
+        "Pick 3–5 benchmark competitors and collect their 1-star reviews, changelogs, and pricing pages",
+        "Cluster findings into recurring complaints, bloated features, and hidden friction",
+        "Extract 1 wedge opportunity incumbents are too slow or conflicted to pursue"
+      ]
+    },
+    "deliverable": {
+      "zh": "一份《竞品软肋与切入点一页纸报告》",
+      "en": "A 1-page Competitor Weaknesses & Wedge Opportunity brief"
+    },
+    "current_stack": {
+      "zh": "联网搜索模型 + 结构化信息抽取模板",
+      "en": "Web-enabled LLM + structured extraction template"
+    },
+    "anti_pattern": {
+      "zh": "不要天天盯着竞品动态产生焦虑，也不要变成“对手加什么功能我就抄什么”。",
+      "en": "Don't obsess over daily competitor moves or fall into reactive feature-copying."
+    },
+    "combos": [
+      "ops-01",
+      "grw-02"
+    ],
+    "tags": {
+      "layer": "Thinking",
+      "form_factor": "Skill / Template",
+      "leverage": "Time"
+    }
+  },
+  {
+    "id": "cos-04",
+    "drawer": "chief-of-staff",
+    "title": {
+      "zh": "单向门决策矩阵",
+      "en": "One-Way Door Decision Matrix"
+    },
+    "metaphor": {
+      "zh": "小事秒拍板，大事慢三拍",
+      "en": "Move fast on reversible calls; slow down on irreversible ones"
+    },
+    "trigger": {
+      "zh": "当你在技术选型、定价、合作或域名等决定上反复纠结，白白耗掉好几天时。",
+      "en": "When you're paralyzed for days over a tech stack, pricing, or partnership choice."
+    },
+    "mechanism": {
+      "zh": [
+        "判定该决定属于“双向门”（错了 48 小时内可低成本撤回）还是“单向门”（不可逆）",
+        "双向门直接设 15 分钟倒计时拍板，禁止继续调研",
+        "单向门则列出“最坏结果 + 止损底线 + 必须满足的 3 个前提条件”后再做决定"
+      ],
+      "en": [
+        "Classify the call as a Two-Way Door (reversible within 48h) or One-Way Door (irreversible)",
+        "For Two-Way Doors, set a 15-minute timer, decide, and ban further research",
+        "For One-Way Doors, define the worst-case floor, stop-loss line, and 3 non-negotiable criteria"
+      ]
+    },
+    "deliverable": {
+      "zh": "一份带止损线与复盘日期的《决策备忘录》",
+      "en": "A Decision Memo with stop-loss criteria and a scheduled review date"
+    },
+    "current_stack": {
+      "zh": "极简决策判定 Prompt + 本地决策日志（Markdown）",
+      "en": "Decision triage Prompt + local Markdown decision log"
+    },
+    "anti_pattern": {
+      "zh": "不要把本可以随时改掉的小事（如按钮颜色、初期文案）当成单向门来开会研究。",
+      "en": "Don't treat easily reversible tweaks (like copy or colors) as high-stakes One-Way Doors."
+    },
+    "combos": [
+      "cos-01",
+      "leg-02"
+    ],
+    "tags": {
+      "layer": "Thinking",
+      "form_factor": "Prompt / Protocol",
+      "leverage": "Risk"
+    }
+  }
+]

@@ -1,0 +1,198 @@
+[
+  {
+    "id": "edt-01",
+    "drawer": "editorial",
+    "title": {
+      "zh": "个人语调校准器",
+      "en": "Personal Tone-of-Voice Calibrator"
+    },
+    "metaphor": {
+      "zh": "一键洗掉“总而言之”的廉价 AI 味",
+      "en": "Scrubbing generic AI-speak out to preserve your real voice"
+    },
+    "trigger": {
+      "zh": "当你让 AI 辅助写文章或产品文案，读起来却满屏“不仅如此、值得注意的是、赋能”，完全不像人话时。",
+      "en": "When AI-assisted drafts read like corporate fluff ('delve', 'moreover', 'in today's fast-paced world') instead of you."
+    },
+    "mechanism": {
+      "zh": [
+        "喂入 3 篇你最满意的亲笔旧作，让 AI 逆向提炼你的句式长短、用词偏好与情绪克制度",
+        "建立一份《禁用词黑名单》（拉黑所有翻译腔、播音腔和空洞形容词）",
+        "每次成稿后过一遍校准器，强制删掉铺垫废话，保留具象细节与个人判断"
+      ],
+      "en": [
+        "Feed 3 of your best human-written pieces so AI extracts your sentence cadence, vocabulary, and restraint",
+        "Maintain an explicit Banned-Words Blacklist killing filler transitions and hollow adjectives",
+        "Run every draft through the calibrator to cut throat-clearing intros and sharpen concrete specifics"
+      ]
+    },
+    "deliverable": {
+      "zh": "一份可常驻上下文的《个人写作风格宪法（Tone Guide）》",
+      "en": "A persistent Personal Tone-of-Voice Guide ready to inject into any chat"
+    },
+    "current_stack": {
+      "zh": "个人风格 Prompt 文件 + 禁用词检查清单",
+      "en": "Personal style Prompt file + banned-word checklist"
+    },
+    "anti_pattern": {
+      "zh": "不要试图用风格指南掩盖“本来就没想清楚观点”的硬伤；没干货的文章洗完还是空的。",
+      "en": "Style calibration can't rescue an empty argument; fix the thinking before polishing the voice."
+    },
+    "combos": [
+      "edt-02",
+      "edt-04"
+    ],
+    "tags": {
+      "layer": "Memory",
+      "form_factor": "Skill / Template",
+      "leverage": "Quality"
+    }
+  },
+  {
+    "id": "edt-02",
+    "drawer": "editorial",
+    "title": {
+      "zh": "长文逻辑骨架师",
+      "en": "Long-Form Logic Architect"
+    },
+    "metaphor": {
+      "zh": "先焊死论证钢筋，再浇筑文字水泥",
+      "en": "Welding the argument's steel frame before pouring any prose"
+    },
+    "trigger": {
+      "zh": "当你脑子里有一堆零散洞察想写成深度长文，但动笔就跑偏、写到一半逻辑散架时。",
+      "en": "When you have sharp scattered insights for a deep essay, but the draft rambles and loses structure halfway."
+    },
+    "mechanism": {
+      "zh": [
+        "把所有碎片想法语音转文字或无序倒出，不追求通顺",
+        "让 AI 帮你找出 1 个核心论点（Thesis），并将碎片重排为“反常识钩子 → 痛点拆解 → 底层机制 → 落地解法”的论证链",
+        "检查相邻段落之间是否存在逻辑断层或循环论证，确认骨架无误后再展开写正文"
+      ],
+      "en": [
+        "Brain-dump all raw fragments via voice or bullet notes without worrying about flow",
+        "Extract 1 central thesis and arrange fragments into a tight arc: hook, tension, mechanism, and resolution",
+        "Audit transitions between sections for logical leaps before drafting a single full paragraph"
+      ]
+    },
+    "deliverable": {
+      "zh": "一份带逐段核心句与论据锚点的《长文逻辑大纲》",
+      "en": "A structural outline with topic sentences and evidence anchors for every section"
+    },
+    "current_stack": {
+      "zh": "语音速记 + 逻辑大纲构建 Prompt",
+      "en": "Voice-to-text capture + outline-architect Prompt"
+    },
+    "anti_pattern": {
+      "zh": "不要直接让 AI 根据大纲一键生成 3000 字全文；骨架可以合搭，关键观点和案例必须自己写。",
+      "en": "Don't let AI auto-expand the outline into 3,000 words; co-build the skeleton, write the core insights yourself."
+    },
+    "combos": [
+      "edt-01",
+      "grw-01"
+    ],
+    "tags": {
+      "layer": "Thinking",
+      "form_factor": "Prompt / Protocol",
+      "leverage": "Quality"
+    }
+  },
+  {
+    "id": "edt-03",
+    "drawer": "editorial",
+    "title": {
+      "zh": "双语地道本地化器",
+      "en": "Bilingual Native Localizer"
+    },
+    "metaphor": {
+      "zh": "不是逐字翻译，而是用另一种语言重新表达一遍",
+      "en": "Re-expressing ideas natively instead of word-for-word translation"
+    },
+    "trigger": {
+      "zh": "当你要做中英双语产品、文档或卡片库，机翻出来的英文僵硬别扭、丢失原本的犀利感时。",
+      "en": "When building bilingual products or docs where literal translation kills the punch and reads awkwardly."
+    },
+    "mechanism": {
+      "zh": [
+        "先要求 AI 用一句话提炼原句的“真实意图与语气色彩”（如冷峻、幽默、克制）",
+        "严禁逐词直译，要求直接按目标语言的母语习惯重写 2 个版本（标准版 vs. 极简犀利版）",
+        "检查产品术语与 UI 标签在全站范围内的译名一致性"
+      ],
+      "en": [
+        "First have AI state the source text's core intent and tonal register (dry, witty, crisp)",
+        "Ban literal translation; generate 2 native rewrites (standard vs. punchy/minimalist)",
+        "Cross-check domain terms and UI labels for strict consistency across the entire project"
+      ]
+    },
+    "deliverable": {
+      "zh": "一组无翻译腔的双语对照文案与《项目术语表》",
+      "en": "Native-grade bilingual copy paired with a consistent Project Glossary"
+    },
+    "current_stack": {
+      "zh": "双语本地化 Prompt + 项目术语对照表（JSON/Markdown）",
+      "en": "Localization Prompt + project glossary (JSON/Markdown)"
+    },
+    "anti_pattern": {
+      "zh": "不要在 UI 按钮或短卡片上追求字数完全对称；英文通常更占宽度，要优先保证自然简洁。",
+      "en": "Don't force equal character counts on UI labels; prioritize native brevity and check layout overflow."
+    },
+    "combos": [
+      "edt-01",
+      "prd-03"
+    ],
+    "tags": {
+      "layer": "Building",
+      "form_factor": "Prompt / Protocol",
+      "leverage": "Time"
+    }
+  },
+  {
+    "id": "edt-04",
+    "drawer": "editorial",
+    "title": {
+      "zh": "金句与隐喻提炼炉",
+      "en": "Metaphor & Hook Distiller"
+    },
+    "metaphor": {
+      "zh": "把干瘪的专业术语，压成一眼记住的具象画面",
+      "en": "Compressing dry jargon into vivid, unforgettable mental hooks"
+    },
+    "trigger": {
+      "zh": "当你写完一个好产品或好观点，却发现标题平淡无奇、一句话说不清它到底牛在哪时。",
+      "en": "When you've built something great, but your headline is bland and takes three paragraphs to explain."
+    },
+    "mechanism": {
+      "zh": [
+        "输入核心机制或产品功能，找出读者最熟悉的 3 个日常物理隐喻（如工具箱、安检门、手术刀）",
+        "强制用“反差对比”或“动作画面”重写成 15 字以内的短句（例如：从 X 变成 Y）",
+        "做“陌生人 3 秒盲测”：删掉所有行业黑话，看外行能不能瞬间听懂"
+      ],
+      "en": [
+        "Map your abstract feature onto 3 familiar physical metaphors (toolbox, circuit breaker, scalpel)",
+        "Rewrite into a crisp sub-10-word hook using sharp contrast or concrete action",
+        "Run a 3-second outsider test: strip all jargon until a non-expert gets it instantly"
+      ]
+    },
+    "deliverable": {
+      "zh": "5 个备选高传播度 Slogan / 隐喻钩子",
+      "en": "5 sharp candidate slogans or metaphor hooks"
+    },
+    "current_stack": {
+      "zh": "隐喻联想 Prompt + 个人金句灵感库",
+      "en": "Metaphor-mapping Prompt + personal swipe file"
+    },
+    "anti_pattern": {
+      "zh": "不要为了押韵或抖机灵而牺牲准确性；好的隐喻是降低理解成本，不是制造歧义。",
+      "en": "Never sacrifice accuracy for clever wordplay; a good metaphor clarifies, not confuses."
+    },
+    "combos": [
+      "grw-02",
+      "grw-01"
+    ],
+    "tags": {
+      "layer": "Distribution",
+      "form_factor": "Prompt / Protocol",
+      "leverage": "Quality"
+    }
+  }
+]

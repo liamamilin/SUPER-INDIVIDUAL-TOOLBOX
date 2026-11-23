@@ -1,0 +1,112 @@
+{
+  "drawers": [
+    {
+      "code": "00",
+      "id": "personal-os",
+      "file": "personal-os.json",
+      "prefix": "os-",
+      "zh": "个人操作系统",
+      "en": "Personal OS",
+      "question": {
+        "zh": "脑子乱了、精力耗尽了、学不进去了怎么办？",
+        "en": "Overthinking, drained, or struggling to retain new knowledge?"
+      }
+    },
+    {
+      "code": "01",
+      "id": "chief-of-staff",
+      "file": "chief-of-staff.json",
+      "prefix": "cos-",
+      "zh": "参谋与战略官",
+      "en": "Chief of Staff",
+      "question": {
+        "zh": "这件事值不值得做？我有没有致命盲区？",
+        "en": "Is this worth doing? What are my fatal blind spots?"
+      }
+    },
+    {
+      "code": "02",
+      "id": "product-architect",
+      "file": "product-architect.json",
+      "prefix": "prd-",
+      "zh": "产品与架构师",
+      "en": "Product & Architect",
+      "question": {
+        "zh": "想法很模糊，怎么变成清晰的规格与边界？",
+        "en": "How do I turn a fuzzy idea into crisp specs and boundaries?"
+      }
+    },
+    {
+      "code": "03",
+      "id": "engineer",
+      "file": "engineer.json",
+      "prefix": "eng-",
+      "zh": "工程师",
+      "en": "Engineer",
+      "question": {
+        "zh": "怎么用最低成本做出来、跑稳定、守住隐私？",
+        "en": "How do I build it lean, keep it stable, and guard privacy?"
+      }
+    },
+    {
+      "code": "04",
+      "id": "design-creative",
+      "file": "design-creative.json",
+      "prefix": "des-",
+      "zh": "设计师与美术",
+      "en": "Design & Creative",
+      "question": {
+        "zh": "怎么让它看起来专业、有审美、有辨识度？",
+        "en": "How do I make it look sharp, cohesive, and unmistakable?"
+      }
+    },
+    {
+      "code": "05",
+      "id": "editorial",
+      "file": "editorial.json",
+      "prefix": "edt-",
+      "zh": "内容与叙事官",
+      "en": "Editorial",
+      "question": {
+        "zh": "怎么把观点写透、讲清楚、沉淀成长期资产？",
+        "en": "How do I sharpen my voice and turn insights into lasting assets?"
+      }
+    },
+    {
+      "code": "06",
+      "id": "growth-commercial",
+      "file": "growth-commercial.json",
+      "prefix": "grw-",
+      "zh": "增长与商业官",
+      "en": "Growth & Commercial",
+      "question": {
+        "zh": "东西做出来了，怎么让人看见并愿意买单？",
+        "en": "It's built—how do I get it seen and paid for?"
+      }
+    },
+    {
+      "code": "07",
+      "id": "ops-automation",
+      "file": "ops-automation.json",
+      "prefix": "ops-",
+      "zh": "运营与自动化官",
+      "en": "Ops & Automation",
+      "question": {
+        "zh": "这件重复的破事，怎么让系统以后自己干？",
+        "en": "How do I automate this recurring chore for good?"
+      }
+    },
+    {
+      "code": "08",
+      "id": "legal-finance",
+      "file": "legal-finance.json",
+      "prefix": "leg-",
+      "zh": "法务与财务官",
+      "en": "Legal & Finance",
+      "question": {
+        "zh": "这里面有没有坑？这笔账算下来划不划算？",
+        "en": "Where are the legal traps, and do the unit economics work?"
+      }
+    }
+  ]
+}

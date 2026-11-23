@@ -1,0 +1,198 @@
+[
+  {
+    "id": "grw-01",
+    "drawer": "growth-commercial",
+    "title": {
+      "zh": "一鱼多吃分发矩阵",
+      "en": "Content Atomizer Matrix"
+    },
+    "metaphor": {
+      "zh": "写透一篇母本，自动拆出全平台弹药",
+      "en": "Turning one deep piece into native ammo for every channel"
+    },
+    "trigger": {
+      "zh": "当你花三天写出一篇深度长文或做完一个项目，发完一次就沉底，没精力再挨个平台重写时。",
+      "en": "When you spend days on a deep essay or launch, post it once, and lack the energy to rewrite it for other platforms."
+    },
+    "mechanism": {
+      "zh": [
+        "锁定 1 份高密度母本（长文、设计文档或项目复盘）作为唯一信源",
+        "按目标平台的原生语境拆解：长推文串（钩子+反转）、图文卡片（3 条金句）、极简社区帖（纯干货无推广味）",
+        "为每个渠道保留独立观察标签，1 周后只保留转化最高的前 2 个渠道持续投入"
+      ],
+      "en": [
+        "Anchor on 1 high-density source asset (essay, design doc, or postmortem) as the single source of truth",
+        "Atomize natively per channel: a sharp thread (hook + twist), visual carousel (3 takeaways), and a zero-fluff community post",
+        "Track response per channel and cut everything except the top 2 performers after a week"
+      ]
+    },
+    "deliverable": {
+      "zh": "一套适配 3–4 个不同平台的原生分发文案包",
+      "en": "A native multi-channel distribution pack ready for 3–4 platforms"
+    },
+    "current_stack": {
+      "zh": "多平台改写 Skill + 个人语调校准器（edt-01）",
+      "en": "Multi-channel repurposing Skill + Tone-of-Voice Calibrator (edt-01)"
+    },
+    "anti_pattern": {
+      "zh": "不要把同一段文字直接复制粘贴到所有平台；不同社区的语境和反感点完全不同。",
+      "en": "Never copy-paste the exact same block everywhere; each community has distinct norms and triggers."
+    },
+    "combos": [
+      "edt-02",
+      "edt-01"
+    ],
+    "tags": {
+      "layer": "Distribution",
+      "form_factor": "Skill / Template",
+      "leverage": "Time"
+    }
+  },
+  {
+    "id": "grw-02",
+    "drawer": "growth-commercial",
+    "title": {
+      "zh": "着陆页 5 秒转化诊断",
+      "en": "5-Second Landing Page Audit"
+    },
+    "metaphor": {
+      "zh": "用陌生访客的 5 秒耐心，拷问首屏说清了没",
+      "en": "Testing if a cold visitor gets your value in 5 seconds flat"
+    },
+    "trigger": {
+      "zh": "当你把产品链接发出去，有不少人点进来，但几乎没人试用、收藏或留资时。",
+      "en": "When people click your launch link, bounce immediately, and nobody tries or bookmarks the product."
+    },
+    "mechanism": {
+      "zh": [
+        "只截取首屏（不滚动）喂给 AI，强制回答 3 个问题：这是什么、给谁用、我现在该点哪里",
+        "删掉所有宏大叙事与自嗨口号（如“重新定义下一代……”），换成具象痛点与结果",
+        "把核心行动按钮（CTA）和真实交互预览提到首屏视觉中心"
+      ],
+      "en": [
+        "Feed only the above-the-fold screenshot to AI and force 3 answers: what is it, who is it for, what do I click next?",
+        "Delete grandiloquent slogans ('redefining the next generation of...') in favor of concrete outcomes",
+        "Move the primary CTA and a live interactive preview directly into the first viewport"
+      ]
+    },
+    "deliverable": {
+      "zh": "一份《首屏 5 秒诊断报告》及 3 组可直接替换的主副标题",
+      "en": "A 5-Second Above-the-Fold Audit with 3 ready-to-swap hero headline options"
+    },
+    "current_stack": {
+      "zh": "多模态视觉模型 + 首屏转化检查 Prompt",
+      "en": "Vision LLM + landing-page conversion audit Prompt"
+    },
+    "anti_pattern": {
+      "zh": "不要在首屏堆砌 5 个同样显眼的按钮；一次只引导访客做 1 个最关键的动作。",
+      "en": "Don't cram 5 competing buttons above the fold; guide visitors toward one unmistakable action."
+    },
+    "combos": [
+      "edt-04",
+      "des-01"
+    ],
+    "tags": {
+      "layer": "Distribution",
+      "form_factor": "Prompt / Protocol",
+      "leverage": "Quality"
+    }
+  },
+  {
+    "id": "grw-03",
+    "drawer": "growth-commercial",
+    "title": {
+      "zh": "GEO / SEO 语义优化器",
+      "en": "GEO & SEO Semantic Optimizer"
+    },
+    "metaphor": {
+      "zh": "同时讨好传统搜索引擎与 AI 问答的引用偏好",
+      "en": "Structuring pages so both search engines and AI answers cite you"
+    },
+    "trigger": {
+      "zh": "当你做出了高质量的开源工具、文档或专栏，却在搜索和大模型问答里完全搜不到自己时。",
+      "en": "When you publish a solid tool or guide, yet remain invisible in both Google and AI search answers."
+    },
+    "mechanism": {
+      "zh": [
+        "为每个核心页面补齐清晰的语义标签（Title、Description、Open Graph、JSON-LD 结构化数据）",
+        "在正文开头用 2–3 句话给出“可直接被 AI 摘录引用”的清晰定义与核心对比表",
+        "用真实用户会搜的自然语言问题作为小标题，而非晦涩的内部代号"
+      ],
+      "en": [
+        "Add clean semantic metadata to every page (Title, Description, Open Graph, and JSON-LD schema)",
+        "Lead with a crisp 2-sentence definition and structured comparison tables that AI engines can cite verbatim",
+        "Use natural questions real users actually ask as headings instead of internal jargon"
+      ]
+    },
+    "deliverable": {
+      "zh": "一套可直接嵌入 `<head>` 的元数据模板 + 页面语义结构优化清单",
+      "en": "A drop-in <head> metadata template plus a semantic structure checklist"
+    },
+    "current_stack": {
+      "zh": "静态 HTML Meta 模板 + 语义优化 Prompt",
+      "en": "Static HTML Meta template + semantic audit Prompt"
+    },
+    "anti_pattern": {
+      "zh": "不要堆砌关键词写垃圾内容；在大模型检索时代，信息密度与原创结构比词频重要得多。",
+      "en": "Never stuff keywords into thin fluff; in AI search, original structure and density beat keyword spam."
+    },
+    "combos": [
+      "eng-01",
+      "grw-02"
+    ],
+    "tags": {
+      "layer": "Distribution",
+      "form_factor": "Skill / Template",
+      "leverage": "Quality"
+    }
+  },
+  {
+    "id": "grw-04",
+    "drawer": "growth-commercial",
+    "title": {
+      "zh": "冷启动种子用户话术库",
+      "en": "Cold-Start Outreach Playbook"
+    },
+    "metaphor": {
+      "zh": "不群发、不卑微，精准敲开前 20 个用户的门",
+      "en": "Knocking on your first 20 users' doors without sounding like spam"
+    },
+    "trigger": {
+      "zh": "当你的 V1 产品刚上线，需要找到前 20 个真实种子用户收集反馈，但不好意思开口推广时。",
+      "en": "When your V1 just shipped and you need 20 real early users for feedback without feeling pushy."
+    },
+    "mechanism": {
+      "zh": [
+        "在社区/评论区锁定正在吐槽该痛点的具体人，绝不盲目群发",
+        "采用“具体观察 + 免费解法 + 零压力退路”三段式短消息（控制在 100 字以内）",
+        "把每一次回复里的真实措辞记录下来，直接反哺成你的着陆页文案"
+      ],
+      "en": [
+        "Find specific people actively complaining about the exact problem in communities—never blast cold lists",
+        "Send a sub-80-word note: specific observation + free working fix + zero-pressure opt-out",
+        "Log the exact words prospects use in replies and recycle them straight into your landing page copy"
+      ]
+    },
+    "deliverable": {
+      "zh": "3 套不同场景（评论区、私信、老友内测）的极简触达话术模板",
+      "en": "3 concise outreach templates for threads, DMs, and warm beta invites"
+    },
+    "current_stack": {
+      "zh": "个性化触达 Prompt + 简易种子用户反馈表（Markdown）",
+      "en": "Personalized outreach Prompt + lightweight Markdown feedback log"
+    },
+    "anti_pattern": {
+      "zh": "不要一上来就发长达三屏的产品介绍和收费链接；先提供价值、建立对话，再谈转化。",
+      "en": "Don't lead with a 3-paragraph pitch and a paywall; deliver value and start a conversation first."
+    },
+    "combos": [
+      "grw-02",
+      "prd-04"
+    ],
+    "tags": {
+      "layer": "Distribution",
+      "form_factor": "Skill / Template",
+      "leverage": "Time"
+    }
+  }
+]

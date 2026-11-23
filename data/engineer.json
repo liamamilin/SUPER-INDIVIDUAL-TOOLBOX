@@ -1,0 +1,198 @@
+[
+  {
+    "id": "eng-01",
+    "drawer": "engineer",
+    "title": {
+      "zh": "零依赖静态站脚手架",
+      "en": "Zero-Dependency Static Scaffold"
+    },
+    "metaphor": {
+      "zh": "甩掉构建工具包袱，原生三件套直接上线",
+      "en": "Ditching heavy bundlers to ship raw HTML, CSS, and JS"
+    },
+    "trigger": {
+      "zh": "当你只想快速上线一个工具站或展示库，却被 Webpack、npm 依赖冲突和服务器运维劝退时。",
+      "en": "When you just want to ship a lightweight web tool, but npm dependency hell and server ops slow you down."
+    },
+    "mechanism": {
+      "zh": [
+        "采用原生 HTML + CSS Variables + ES Modules，彻底跳过前端构建打包环节",
+        "数据层全部抽离为纯静态 JSON，通过原生 fetch 加载与前端过滤",
+        "直接托管至 GitHub Pages 或 Cloudflare Pages，实现零服务器账单与秒级全球分发"
+      ],
+      "en": [
+        "Use native HTML, CSS Variables, and ES Modules to eliminate build steps entirely",
+        "Decouple content into plain static JSON files loaded via native fetch",
+        "Deploy directly to GitHub Pages or Cloudflare Pages for zero server bills and instant global delivery"
+      ]
+    },
+    "deliverable": {
+      "zh": "一套零 npm 依赖、开箱即部署的静态站基础仓库模板",
+      "en": "A zero-dependency static site boilerplate ready for instant deployment"
+    },
+    "current_stack": {
+      "zh": "原生 HTML/CSS/JS + GitHub Pages + GitHub Actions",
+      "en": "Vanilla HTML/CSS/JS + GitHub Pages + GitHub Actions"
+    },
+    "anti_pattern": {
+      "zh": "不要强行用纯静态站去扛需要复杂后端鉴权、实时多人协作或高并发写入的业务。",
+      "en": "Don't force static architecture onto apps needing complex server-side auth or real-time multi-user writes."
+    },
+    "combos": [
+      "prd-01",
+      "eng-03"
+    ],
+    "tags": {
+      "layer": "Building",
+      "form_factor": "Local / Code",
+      "leverage": "Time"
+    }
+  },
+  {
+    "id": "eng-02",
+    "drawer": "engineer",
+    "title": {
+      "zh": "报错根因二分排查法",
+      "en": "Root-Cause Binary Debugger"
+    },
+    "metaphor": {
+      "zh": "别让 AI 瞎猜改代码，先用二分法把 Bug 逼进死角",
+      "en": "Cornering bugs via binary isolation instead of blind AI guessing"
+    },
+    "trigger": {
+      "zh": "当代码报错，你把整段报错甩给 AI 却越改越乱、陷入“修一个坏两个”的死循环时。",
+      "en": "When pasting stack traces into AI triggers a whack-a-mole loop that breaks more than it fixes."
+    },
+    "mechanism": {
+      "zh": [
+        "禁止 AI 直接重写代码，先要求它基于报错日志列出 3 个最可能的根因假设",
+        "在数据流中点插入最小化日志探针，用二分法一刀切掉一半嫌疑范围",
+        "拿到实测输出锁定唯一根因后，再执行最小侵入式修复并补充回归用例"
+      ],
+      "en": [
+        "Forbid the AI from rewriting code immediately; require 3 ranked root-cause hypotheses from the logs first",
+        "Insert a minimal probe halfway through the data flow to bisect the suspect surface in half",
+        "Once empirical output confirms the exact cause, apply the smallest surgical fix and add a regression check"
+      ]
+    },
+    "deliverable": {
+      "zh": "一份《根因定位记录》与最小侵入式代码补丁",
+      "en": "A confirmed root-cause diagnosis paired with a minimal surgical patch"
+    },
+    "current_stack": {
+      "zh": "Cursor / 代码模型 + 强制“先诊断后动刀”的 Debug 协议",
+      "en": "Cursor / coding LLM + strict diagnose-before-patching protocol"
+    },
+    "anti_pattern": {
+      "zh": "不要在还没复现稳定报错路径之前，就急着让 AI 大面积重构无关模块。",
+      "en": "Don't let AI refactor unrelated modules before you can reliably reproduce the failure."
+    },
+    "combos": [
+      "prd-03",
+      "eng-03"
+    ],
+    "tags": {
+      "layer": "Building",
+      "form_factor": "Prompt / Protocol",
+      "leverage": "Time"
+    }
+  },
+  {
+    "id": "eng-03",
+    "drawer": "engineer",
+    "title": {
+      "zh": "自动化校验 CI 门禁",
+      "en": "Automated CI Validation Gate"
+    },
+    "metaphor": {
+      "zh": "在上线前装一道冷酷的自动安检门",
+      "en": "An automated security checkpoint before anything hits production"
+    },
+    "trigger": {
+      "zh": "当你一个人维护几十上百条数据或代码文件，生怕手滑改错一个逗号或拼错 ID 导致线上白屏时。",
+      "en": "When maintaining growing data or code solo, fearing one typo or broken ID will crash production."
+    },
+    "mechanism": {
+      "zh": [
+        "用原生脚本（如 Node .mjs）写出核心不变量检查：JSON 语法、必填字段、ID 唯一性与引用完整性",
+        "在 GitHub Actions 配置 push 触发工作流，校验不通过直接阻断部署",
+        "每次线上踩过一个新坑，就往校验脚本里补一条对应的防复发规则"
+      ],
+      "en": [
+        "Write a zero-dependency script (e.g., Node .mjs) asserting core invariants: valid JSON, required fields, unique IDs, and referential integrity",
+        "Wire it into GitHub Actions on every push to block deployment upon any failure",
+        "Every time a new bug slips through, encode a permanent rule into the gate so it never recurs"
+      ]
+    },
+    "deliverable": {
+      "zh": "一套本地与云端双运行的校验脚本 + GitHub Actions 流水线文件",
+      "en": "A local/CI validation script paired with a GitHub Actions workflow YAML"
+    },
+    "current_stack": {
+      "zh": "Node.js 原生脚本 + GitHub Actions CI/CD",
+      "en": "Native Node.js script + GitHub Actions CI/CD"
+    },
+    "anti_pattern": {
+      "zh": "不要一开始就搭复杂的端到端测试集群，先守住“数据不坏、页面不挂”的 80/20 底线。",
+      "en": "Don't build a bloated E2E suite on day one; guard the 80/20 invariants that prevent total breakage first."
+    },
+    "combos": [
+      "prd-02",
+      "ops-03"
+    ],
+    "tags": {
+      "layer": "Automation",
+      "form_factor": "Local / Code",
+      "leverage": "Risk"
+    }
+  },
+  {
+    "id": "eng-04",
+    "drawer": "engineer",
+    "title": {
+      "zh": "本地优先隐私架构模版",
+      "en": "Local-First Privacy Architecture"
+    },
+    "metaphor": {
+      "zh": "敏感数据锁死在自己硬盘里，绝不上传云端",
+      "en": "Locking sensitive data on local hardware, completely off the cloud"
+    },
+    "trigger": {
+      "zh": "当你处理日记、财务账单、医疗记录或未公开商业源码等高度敏感内容，不放心喂给云端 API 时。",
+      "en": "When processing diaries, financials, medical records, or private IP that you refuse to upload to cloud APIs."
+    },
+    "mechanism": {
+      "zh": [
+        "强制数据存储与索引完全留在本地文件系统（SQLite / Markdown / IndexedDB）",
+        "接入端侧小模型（如 Ollama / WebGPU）处理脱敏、摘要与检索，物理断网亦可运行",
+        "若确需调用云端大模型，先经本地脚本完成实体脱敏（替换人名、金额、账号）再出网"
+      ],
+      "en": [
+        "Keep all storage and indexing strictly on the local filesystem (SQLite, Markdown, or IndexedDB)",
+        "Run on-device small models (Ollama / WebGPU) for offline summarization and retrieval",
+        "If cloud reasoning is strictly required, pass text through a local PII-redaction script before sending"
+      ]
+    },
+    "deliverable": {
+      "zh": "一份《离线隐私架构方案》与本地脱敏预处理脚本",
+      "en": "An offline-first architecture blueprint plus a local PII-redaction script"
+    },
+    "current_stack": {
+      "zh": "Ollama / 本地小模型 + 浏览器 IndexedDB / 本地 CLI",
+      "en": "Ollama / on-device SLM + browser IndexedDB or local CLI"
+    },
+    "anti_pattern": {
+      "zh": "不要拿端侧小模型去硬扛超长上下文复杂推理，合理拆分“本地脱敏/检索 + 云端重推理”的边界。",
+      "en": "Don't force tiny local models into heavy multi-step reasoning; split local privacy from cloud compute cleanly."
+    },
+    "combos": [
+      "leg-03",
+      "ops-02"
+    ],
+    "tags": {
+      "layer": "Building",
+      "form_factor": "Local / Code",
+      "leverage": "Risk"
+    }
+  }
+]
