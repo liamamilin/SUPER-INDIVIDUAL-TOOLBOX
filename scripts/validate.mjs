@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const DATA_DIR = path.resolve(process.cwd(), 'data');
+const MANIFEST_PATH = path.join(DATA_DIR, 'manifest.json');
 const IS_PARTIAL = process.argv.includes('--partial');
 
 const DRAWER_PREFIX = {
@@ -33,6 +34,37 @@ if (!fs.existsSync(DATA_DIR)) {
 const files = fs
   .readdirSync(DATA_DIR)
   .filter(f => f.endsWith('.json') && f !== 'tools.json' && f !== 'manifest.json');
+
+// 0. Manifest consistency check
+if (!fs.existsSync(MANIFEST_PATH)) {
+  errors.push('[manifest.json] Missing data/manifest.json');
+} else {
+  try {
+    const manifest = JSON.parse(fs.readFileSync(MANIFEST_PATH, 'utf-8'));
+    if (!manifest || !Array.isArray(manifest.drawers)) {
+      errors.push('[manifest.json] Must contain a "drawers" array');
+    } else {
+      const declaredFiles = new Set();
+      for (const d of manifest.drawers) {
+        if (!d.file) {
+          errors.push(`[manifest.json] Drawer "${d.id || 'UNKNOWN'}" missing "file"`);
+          continue;
+        }
+        declaredFiles.add(d.file);
+        if (!fs.existsSync(path.join(DATA_DIR, d.file))) {
+          errors.push(`[manifest.json] Declared file "data/${d.file}" does not exist`);
+        }
+      }
+      for (const f of files) {
+        if (!declaredFiles.has(f)) {
+          errors.push(`[manifest.json] Orphan data file "data/${f}" is not registered in manifest.json`);
+        }
+      }
+    }
+  } catch (err) {
+    errors.push(`[manifest.json] JSON parse error: ${err.message}`);
+  }
+}
 
 for (const file of files) {
   const filePath = path.join(DATA_DIR, file);

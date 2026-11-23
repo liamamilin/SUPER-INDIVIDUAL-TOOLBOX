@@ -638,3 +638,43 @@ body {
   z-index: 60;
   box-shadow: var(--shadow-md);
 }
+/* v1.0.1 Enhancements: X-Ray interactive & missing warning + Prompt copy button */
+.xray-bar-item {
+  cursor: pointer;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.xray-bar-item:hover {
+  border-color: var(--accent);
+  transform: translateY(-1px);
+}
+.xray-bar-item.missing {
+  border-style: dashed;
+  border-color: var(--danger-border);
+  background: var(--danger-bg);
+}
+.xray-missing-hint {
+  font-size: 11px;
+  color: var(--danger-text);
+  margin-top: 6px;
+  font-weight: 600;
+}
+.modal-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.copy-prompt-btn {
+  border: 1px solid var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent-text);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: filter 0.15s ease;
+}
+.copy-prompt-btn:hover {
+  filter: brightness(0.95);
+}
